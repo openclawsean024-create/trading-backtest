@@ -1,5 +1,15 @@
 # Changelog — Trading Backtest
 
+## 🌐 部署
+
+- **GitHub Pages**: https://openclawsean024-create.github.io/trading-backtest/
+- **Repo**: https://github.com/openclawsean024-create/trading-backtest
+- **Branches**: `master` (source) + `gh-pages` (built dist)
+- **Build**: `npm run build` → 502KB JS / 14KB CSS / 2.67KB HTML (gzip 158KB JS)
+- **Status**: 🟢 built, HTTPS enforced, custom 404 (SPA fallback)
+
+---
+
 ## v3.1 (Session 18) — 2026-07-09
 
 ### ✨ Pro 功能完整實裝
