@@ -11,11 +11,11 @@ const FREE_FEATURES = [
 
 const PRO_FEATURES = [
   '無限次回測',
-  '股票市場支援（美股/台股）',
-  '多策略組合回測',
-  '策略一鍵保存/載入',
-  'PDF / CSV 報告匯出',
-  '完整風險指標（Sortino、Calmar、VAR）',
+  { icon: '🚧', text: '股票市場支援（美股/台股）', soon: true },
+  { icon: '🚧', text: '多策略組合回測', soon: true },
+  '策略一鍵保存/載入 ✅ 本次新增',
+  'PDF / CSV 報告匯出 ✅ 本次新增',
+  '完整風險指標（Sortino、Calmar、VAR、CAGR）✅ 本次新增',
   '優先客戶支援',
   '無浮水印',
 ];
@@ -73,11 +73,15 @@ export default function PricingPage() {
             <p className="plan-desc">適合认真对待交易的专业玩家</p>
           </div>
           <ul className="feature-list">
-            {PRO_FEATURES.map((f, i) => (
-              <li key={i} className="feature-item">
-                <span className="feature-check pro-check">✓</span> {f}
-              </li>
-            ))}
+            {PRO_FEATURES.map((f, i) => {
+              const text = typeof f === 'string' ? f : f.text;
+              const soon = typeof f === 'object' && f.soon;
+              return (
+                <li key={i} className={`feature-item ${soon ? 'feature-soon' : ''}`}>
+                  <span className="feature-check pro-check">{soon ? '🚧' : '✓'}</span> {text}
+                </li>
+              );
+            })}
           </ul>
           <button
             className="plan-btn pro-btn"

@@ -523,7 +523,7 @@ function App() {
       <header className="header">
         <div className="header-left">
           <h1 className="title">📈 交易回測工具</h1>
-          <span className="subtitle">Trading Backtest v3.0</span>
+          <span className="subtitle">Trading Backtest v3.1 <span className="badge-new">✨ Pro 指標 + CSV/報告匯出</span></span>
         </div>
         <a href="/pricing" className="pricing-link">查看定價 →</a>
       </header>
