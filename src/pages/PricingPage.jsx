@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const FREE_FEATURES = [
   '每月 30 次回測',
@@ -56,7 +57,7 @@ export default function PricingPage() {
               </li>
             ))}
           </ul>
-          <a href="/" className="plan-btn free-btn">開始使用</a>
+          <Link to="/" className="plan-btn free-btn">開始使用</Link>
         </div>
 
         <div className="pricing-card pro">

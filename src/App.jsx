@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
+import { Link } from 'react-router-dom';
 import {
   createChart,
   CandlestickSeries,
@@ -525,7 +526,7 @@ function App() {
           <h1 className="title">📈 交易回測工具</h1>
           <span className="subtitle">Trading Backtest v3.1 <span className="badge-new">✨ Pro 指標 + CSV/報告匯出</span></span>
         </div>
-        <a href="/pricing" className="pricing-link">查看定價 →</a>
+        <Link to="/pricing" className="pricing-link">查看定價 →</Link>
       </header>
 
       <div className="controls">
