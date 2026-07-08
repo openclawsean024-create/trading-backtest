@@ -14,14 +14,15 @@ export function exportTradesCSV(trades, meta = {}) {
 
   const rows = trades.map((t, i) => {
     const prev = trades[i - 1];
-    const holdBars = prev && t.time && prev.time
-      ? Math.round((new Date(t.time).getTime() - new Date(prev.time).getTime()) / (60 * 60 * 1000))
+    const ts = t.date ? new Date(t.date * 1000).toISOString() : (t.time || '');
+    const holdBars = prev && prev.date && t.date
+      ? Math.round(((t.date - prev.date) / 60 / 60))
       : '';
     const returnPct = t.pnl !== undefined && prev && prev.price
       ? ((t.price - prev.price) / prev.price * 100).toFixed(2)
       : '';
     return [
-      t.time ? new Date(t.time).toISOString() : '',
+      ts,
       t.type === 'BUY' ? '買入' : '賣出',
       t.price?.toFixed(2) || '',
       t.quantity?.toFixed(6) || '',
@@ -29,7 +30,7 @@ export function exportTradesCSV(trades, meta = {}) {
       returnPct,
       holdBars,
       meta.strategy || '',
-      t.signalType || '',
+      t.signal || '',
     ];
   });
 
