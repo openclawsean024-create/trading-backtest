@@ -2,10 +2,12 @@
 <html lang="zh-TW">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#0f172a" />
+    <meta name="color-scheme" content="dark light" />
     <title>交易回測工具 | Trading Backtest</title>
     <meta name="description" content="免費的加密貨幣與股票技術分析回測工具。支援 MA 交叉、RSI、MACD、布林通道等策略，專業級 K 線圖表與風險統計數據，瀏覽器內即可運行。" />
-    <meta name="keywords" content="交易回測, 加密貨幣, 股票, 技術分析, backtest, Binance, RSI, MACD, 均線交叉" />
+    <meta name="keywords" content="交易回測, 加密貨幣, 股票, 技術分析, backtest, Binance, RSI, MACD, 均線交叉, Sortino, Calmar, VAR, CAGR" />
     <meta name="author" content="TradeBacktest" />
     <meta name="robots" content="index, follow" />
 
@@ -15,13 +17,34 @@
     <meta property="og:description" content="免費的加密貨幣與股票技術分析回測工具。支援 MA 交叉、RSI、MACD、布林通道等策略。" />
     <meta property="og:url" content="https://trade-backtest-eight.vercel.app" />
     <meta property="og:site_name" content="TradeBacktest" />
+    <meta property="og:image" content="https://trade-backtest-eight.vercel.app/og-image.svg" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="交易回測工具 | Trading Backtest" />
     <meta name="twitter:description" content="免費的加密貨幣與股票技術分析回測工具。瀏覽器內即可運行。" />
+    <meta name="twitter:image" content="https://trade-backtest-eight.vercel.app/og-image.svg" />
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "交易回測工具",
+      "url": "https://trade-backtest-eight.vercel.app",
+      "description": "免費的加密貨幣與股票技術分析回測工具",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "TWD"
+      }
+    }
+    </script>
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href="https://trade-backtest-eight.vercel.app" />
   </head>
   <body>
     <div id="root"></div>

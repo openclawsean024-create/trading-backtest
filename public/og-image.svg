@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a" />
+      <stop offset="100%" style="stop-color:#1e293b" />
+    </linearGradient>
+    <linearGradient id="amber" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#fbbf24" />
+      <stop offset="100%" style="stop-color:#f59e0b" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)" />
+
+  <!-- Decorative grid -->
+  <g stroke="#334155" stroke-width="1" opacity="0.3">
+    <line x1="0" y1="120" x2="1200" y2="120" />
+    <line x1="0" y1="240" x2="1200" y2="240" />
+    <line x1="0" y1="360" x2="1200" y2="360" />
+    <line x1="0" y1="480" x2="1200" y2="480" />
+    <line x1="240" y1="0" x2="240" y2="630" />
+    <line x1="480" y1="0" x2="480" y2="630" />
+    <line x1="720" y1="0" x2="720" y2="630" />
+    <line x1="960" y1="0" x2="960" y2="630" />
+  </g>
+
+  <!-- Candlestick chart decorative -->
+  <g transform="translate(60, 380)">
+    <!-- Wicks -->
+    <line x1="80" y1="80" x2="80" y2="20" stroke="#22c55e" stroke-width="2" />
+    <rect x="70" y="40" width="20" height="50" fill="#22c55e" />
+    <line x1="120" y1="60" x2="120" y2="0" stroke="#ef4444" stroke-width="2" />
+    <rect x="110" y="20" width="20" height="40" fill="#ef4444" />
+    <line x1="160" y1="50" x2="160" y2="-10" stroke="#22c55e" stroke-width="2" />
+    <rect x="150" y="0" width="20" height="50" fill="#22c55e" />
+    <line x1="200" y1="40" x2="200" y2="-20" stroke="#22c55e" stroke-width="2" />
+    <rect x="190" y="-10" width="20" height="60" fill="#22c55e" />
+    <line x1="240" y1="20" x2="240" y2="-40" stroke="#ef4444" stroke-width="2" />
+    <rect x="230" y="-30" width="20" height="50" fill="#ef4444" />
+    <line x1="280" y1="0" x2="280" y2="-60" stroke="#22c55e" stroke-width="2" />
+    <rect x="270" y="-50" width="20" height="60" fill="#22c55e" />
+    <line x1="320" y1="-20" x2="320" y2="-80" stroke="#22c55e" stroke-width="2" />
+    <rect x="310" y="-70" width="20" height="50" fill="#22c55e" />
+    <line x1="360" y1="-40" x2="360" y2="-100" stroke="#ef4444" stroke-width="2" />
+    <rect x="350" y="-90" width="20" height="50" fill="#ef4444" />
+  </g>
+
+  <!-- Title -->
+  <text x="60" y="180" fill="#fbbf24" font-family="-apple-system, system-ui, sans-serif" font-size="72" font-weight="800">
+    📈 交易回測工具
+  </text>
+
+  <!-- Subtitle -->
+  <text x="60" y="240" fill="#cbd5e1" font-family="-apple-system, system-ui, sans-serif" font-size="32" font-weight="500">
+    Trading Backtest · 免費 · 瀏覽器內即可運行
+  </text>
+
+  <!-- Features -->
+  <g transform="translate(60, 290)" font-family="-apple-system, system-ui, sans-serif" font-size="22" fill="#94a3b8">
+    <text x="0" y="0">✦ MA 交叉 / RSI 超買超賣 / MACD 策略</text>
+    <text x="0" y="32">✦ 完整風險指標：Sortino · Calmar · VAR · CAGR</text>
+    <text x="0" y="64">✦ 15 種幣對 × 7 種 K 線週期 × TradingView 圖表</text>
+    <text x="0" y="96">✦ CSV / 文字報告匯出 · 策略預設保存</text>
+  </g>
+
+  <!-- PRO badge -->
+  <g transform="translate(900, 100)">
+    <rect x="0" y="0" width="240" height="100" rx="14" fill="#fbbf24" />
+    <text x="120" y="38" text-anchor="middle" fill="#0f172a" font-family="-apple-system, system-ui, sans-serif" font-size="20" font-weight="700">升級</text>
+    <text x="120" y="78" text-anchor="middle" fill="#0f172a" font-family="-apple-system, system-ui, sans-serif" font-size="36" font-weight="800">PRO</text>
+  </g>
+
+  <!-- URL -->
+  <text x="60" y="600" fill="#64748b" font-family="-apple-system, system-ui, sans-serif" font-size="18">
+    trade-backtest-eight.vercel.app
+  </text>
+</svg>

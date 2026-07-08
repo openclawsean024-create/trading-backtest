@@ -621,6 +621,32 @@ body {
   .chart-container canvas { min-height: 200px; }
 }
 
+/* === Mobile small (iPhone 375) === */
+@media (max-width: 480px) {
+  .app { padding: 10px; }
+  h1 { font-size: 1.4em; }
+  .stats-row { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .stat-card { padding: 10px 6px; }
+  .stat-label { font-size: 0.6em; }
+  .stat-value { font-size: 1.05em; }
+  .stats-row-pro { grid-template-columns: repeat(2, 1fr); }
+  .action-row { gap: 6px; }
+  .action-btn { font-size: 0.78em; padding: 6px 10px; }
+  .control-row > div { width: 100%; }
+  .control-row label { font-size: 0.78em; }
+  .btn-fetch { width: 100%; padding: 10px; }
+  .btn-quick { padding: 6px 10px; font-size: 0.78em; }
+  .chart-title { font-size: 0.85em; }
+  .chart-container { height: 220px; }
+  .trades-table { font-size: 0.72em; }
+  .trades-table th, .trades-table td { padding: 6px 4px; }
+  .modal-content { padding: 16px; }
+  .modal-save { flex-direction: column; }
+  .preset-item { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .preset-actions { width: 100%; }
+  .preset-actions .action-btn { flex: 1; }
+}
+
 /* ===== RESPONSIVE TABLET 768px+ ===== */
 @media (min-width: 768px) {
   .app { padding: 20px 24px; }
