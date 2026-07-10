@@ -1,4 +1,35 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=block');
+
+/* Custom @font-face declarations to use font-display: block directly.
+   This blocks first render until the font is loaded, eliminating CLS entirely. */
+@font-face {
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: local('Noto Sans TC'), local('NotoSansTC-Regular');
+}
+@font-face {
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 500;
+  font-display: block;
+  src: local('Noto Sans TC Medium'), local('NotoSansTC-Medium');
+}
+@font-face {
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 700;
+  font-display: block;
+  src: local('Noto Sans TC Bold'), local('NotoSansTC-Bold');
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: local('JetBrains Mono'), local('JetBrainsMono-Regular');
+}
 
 * {
   margin: 0;
