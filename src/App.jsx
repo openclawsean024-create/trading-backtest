@@ -757,7 +757,7 @@ function App() {
       )}
 
       {/* Pro 完整風險指標 Sortino/Calmar/VAR/CAGR/Profit Factor/Expectancy */}
-      {result && (
+      {result ? (
       <div className="stats-row stats-row-pro">
           <div className="stat-card pro-card" title="年化報酬率 — 假設報酬以複合方式成長">
             <div className="stat-label">CAGR 年化</div>
@@ -790,6 +790,12 @@ function App() {
             <div className={`stat-value ${result.expectancy >= 0 ? 'pos' : 'neg'}`}>${result.expectancy.toFixed(2)}</div>
           </div>
         </div>
+      ) : (
+        <div className="stats-row stats-row-skeleton" aria-hidden="true">
+          {[1, 2, 3, 4, 5, 6].map((i) => (
+            <div key={`pro-skel-${i}`} className="stat-card stat-card-skeleton" />
+          ))}
+        </div>
       )}
 
       {result && (
@@ -804,12 +810,6 @@ function App() {
           💾 策略預設
         </button>
       </div>
-      ) : (
-        <div className="stats-row stats-row-skeleton" aria-hidden="true">
-          {[1, 2, 3, 4, 5, 6].map((i) => (
-            <div key={`pro-${i}`} className="stat-card stat-card-skeleton" />
-          ))}
-        </div>
       )}
 
       {showPresetModal && (
