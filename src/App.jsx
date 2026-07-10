@@ -520,7 +520,7 @@ function App() {
   const formatPct = (v) => `${v >= 0 ? '+' : ''}${v.toFixed(2)}%`;
 
   return (
-    <div className="app">
+    <main className="app">
       <header className="header">
         <div className="header-left">
           <h1 className="title">📈 交易回測工具</h1>
@@ -532,34 +532,34 @@ function App() {
       <div className="controls">
         <div className="control-row">
           <div className="control-group">
-            <label>交易所</label>
-            <select value="binance" disabled className="select">
+            <label htmlFor="exchange">交易所</label>
+            <select id="exchange" value="binance" disabled className="select">
               <option value="binance">Binance</option>
             </select>
           </div>
           <div className="control-group">
-            <label>幣種</label>
-            <select value={symbol} onChange={(e) => setSymbol(e.target.value)} className="select">
+            <label htmlFor="symbol">幣種</label>
+            <select id="symbol" value={symbol} onChange={(e) => setSymbol(e.target.value)} className="select">
               {POPULAR_PAIRS.map((pair) => (
                 <option key={pair} value={pair}>{pair}</option>
               ))}
             </select>
           </div>
           <div className="control-group">
-            <label>周期</label>
-            <select value={interval} onChange={(e) => setInterval(e.target.value)} className="select">
+            <label htmlFor="interval">周期</label>
+            <select id="interval" value={interval} onChange={(e) => setInterval(e.target.value)} className="select">
               {INTERVALS.map((iv) => (
                 <option key={iv.value} value={iv.value}>{iv.label}</option>
               ))}
             </select>
           </div>
           <div className="control-group">
-            <label>開始</label>
-            <input type="date" value={startDate} onChange={(e) => setStartDate(e.target.value)} className="input" />
+            <label htmlFor="startDate">開始</label>
+            <input id="startDate" type="date" value={startDate} onChange={(e) => setStartDate(e.target.value)} className="input" />
           </div>
           <div className="control-group">
-            <label>結束</label>
-            <input type="date" value={endDate} onChange={(e) => setEndDate(e.target.value)} className="input" />
+            <label htmlFor="endDate">結束</label>
+            <input id="endDate" type="date" value={endDate} onChange={(e) => setEndDate(e.target.value)} className="input" />
           </div>
           <div className="quick-btns">
             <button onClick={() => handleQuickRange(7)} className="btn-quick">7天</button>
@@ -574,8 +574,9 @@ function App() {
 
         <div className="control-row strategy-row">
           <div className="control-group">
-            <label>策略</label>
+            <label htmlFor="strategy">策略</label>
             <select
+              id="strategy"
               value={params.strategy}
               onChange={(e) => handleParamChange('strategy', e.target.value)}
               className="select"
@@ -588,8 +589,9 @@ function App() {
           {params.strategy === 'ma_crossover' && (
             <>
               <div className="control-group">
-                <label>快速均線</label>
+                <label htmlFor="fastPeriodMA">快速均線</label>
                 <input
+                  id="fastPeriodMA"
                   type="number"
                   value={params.fastPeriod}
                   onChange={(e) => handleParamChange('fastPeriod', parseInt(e.target.value) || 10)}
@@ -597,8 +599,9 @@ function App() {
                 />
               </div>
               <div className="control-group">
-                <label>慢速均線</label>
+                <label htmlFor="slowPeriodMA">慢速均線</label>
                 <input
+                  id="slowPeriodMA"
                   type="number"
                   value={params.slowPeriod}
                   onChange={(e) => handleParamChange('slowPeriod', parseInt(e.target.value) || 30)}
@@ -610,8 +613,9 @@ function App() {
           {params.strategy === 'rsi' && (
             <>
               <div className="control-group">
-                <label>RSI 週期</label>
+                <label htmlFor="rsiPeriod">RSI 週期</label>
                 <input
+                  id="rsiPeriod"
                   type="number"
                   value={params.rsiPeriod}
                   onChange={(e) => handleParamChange('rsiPeriod', parseInt(e.target.value) || 14)}
@@ -619,8 +623,9 @@ function App() {
                 />
               </div>
               <div className="control-group">
-                <label>超買</label>
+                <label htmlFor="rsiOverbought">超買</label>
                 <input
+                  id="rsiOverbought"
                   type="number"
                   value={params.rsiOverbought}
                   onChange={(e) => handleParamChange('rsiOverbought', parseInt(e.target.value) || 70)}
@@ -628,8 +633,9 @@ function App() {
                 />
               </div>
               <div className="control-group">
-                <label>超賣</label>
+                <label htmlFor="rsiOversold">超賣</label>
                 <input
+                  id="rsiOversold"
                   type="number"
                   value={params.rsiOversold}
                   onChange={(e) => handleParamChange('rsiOversold', parseInt(e.target.value) || 30)}
@@ -641,16 +647,16 @@ function App() {
           {params.strategy === 'macd' && (
             <>
               <div className="control-group">
-                <label>Fast</label>
-                <input type="number" value={params.fastPeriod} onChange={(e) => handleParamChange('fastPeriod', parseInt(e.target.value) || 12)} className="input-num" />
+                <label htmlFor="fastPeriodMACD">Fast</label>
+                <input id="fastPeriodMACD" type="number" value={params.fastPeriod} onChange={(e) => handleParamChange('fastPeriod', parseInt(e.target.value) || 12)} className="input-num" />
               </div>
               <div className="control-group">
-                <label>Slow</label>
-                <input type="number" value={params.slowPeriod} onChange={(e) => handleParamChange('slowPeriod', parseInt(e.target.value) || 26)} className="input-num" />
+                <label htmlFor="slowPeriodMACD">Slow</label>
+                <input id="slowPeriodMACD" type="number" value={params.slowPeriod} onChange={(e) => handleParamChange('slowPeriod', parseInt(e.target.value) || 26)} className="input-num" />
               </div>
               <div className="control-group">
-                <label>Signal</label>
-                <input type="number" value={params.signalPeriod} onChange={(e) => handleParamChange('signalPeriod', parseInt(e.target.value) || 9)} className="input-num" />
+                <label htmlFor="signalPeriodMACD">Signal</label>
+                <input id="signalPeriodMACD" type="number" value={params.signalPeriod} onChange={(e) => handleParamChange('signalPeriod', parseInt(e.target.value) || 9)} className="input-num" />
               </div>
             </>
           )}
@@ -658,8 +664,9 @@ function App() {
 
         <div className="control-row">
           <div className="control-group">
-            <label>初始資金 ($)</label>
+            <label htmlFor="initialCapital">初始資金 ($)</label>
             <input
+              id="initialCapital"
               type="number"
               value={params.initialCapital}
               onChange={(e) => handleParamChange('initialCapital', parseFloat(e.target.value) || 10000)}
@@ -667,8 +674,9 @@ function App() {
             />
           </div>
           <div className="control-group">
-            <label>交易費用 (%)</label>
+            <label htmlFor="tradingFee">交易費用 (%)</label>
             <input
+              id="tradingFee"
               type="number"
               step="0.01"
               value={params.tradingFee}
@@ -677,8 +685,9 @@ function App() {
             />
           </div>
           <div className="control-group">
-            <label>滑價 (%)</label>
+            <label htmlFor="slippage">滑價 (%)</label>
             <input
+              id="slippage"
               type="number"
               step="0.01"
               value={params.slippage}
@@ -845,7 +854,7 @@ function App() {
           )}
         </div>
       )}
-    </div>
+    </main>
   );
 }
 
@@ -901,6 +910,7 @@ function PresetModal({ params, onLoad, onClose }) {
           <input
             type="text"
             placeholder="預設名稱（例如：保守 MA / 激進 RSI）"
+            aria-label="策略預設名稱"
             value={name}
             onChange={(e) => setName(e.target.value)}
             className="modal-input"
