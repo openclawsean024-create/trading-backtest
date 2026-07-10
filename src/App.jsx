@@ -143,7 +143,7 @@ function App() {
       rightPriceScale: { borderColor: '#334155' },
       timeScale: { borderColor: '#334155', timeVisible: true },
       width: chartContainerRef.current.clientWidth,
-      height: 400,
+      height: chartContainerRef.current.clientHeight,
     });
 
     const candleSeries = chart.addSeries(CandlestickSeries, {
@@ -220,7 +220,7 @@ function App() {
       rightPriceScale: { borderColor: '#334155' },
       timeScale: { borderColor: '#334155', timeVisible: true },
       width: rsiContainerRef.current.clientWidth,
-      height: 150,
+      height: rsiContainerRef.current.clientHeight,
     });
 
     const rsiSeries = chart.addSeries(LineSeries, {
@@ -258,7 +258,7 @@ function App() {
       rightPriceScale: { borderColor: '#334155' },
       timeScale: { borderColor: '#334155', timeVisible: true },
       width: macdContainerRef.current.clientWidth,
-      height: 140,
+      height: macdContainerRef.current.clientHeight,
     });
 
     const histogramSeries = chart.addSeries(HistogramSeries, {
@@ -303,7 +303,7 @@ function App() {
       rightPriceScale: { borderColor: '#334155' },
       timeScale: { borderColor: '#334155', timeVisible: true },
       width: equityContainerRef.current.clientWidth,
-      height: 160,
+      height: equityContainerRef.current.clientHeight,
     });
 
     const equitySeries = chart.addSeries(LineSeries, {
@@ -814,12 +814,12 @@ function App() {
           {candles.length > 0 && <span className="candle-count">{candles.length} 根K線</span>}
         </div>
         <div className="chart-container" ref={chartContainerRef} />
-        <div className="chart-container" ref={rsiContainerRef} />
         <div className="chart-label">RSI</div>
-        <div className="chart-container" ref={macdContainerRef} />
+        <div className="chart-container rsi-container" ref={rsiContainerRef} />
         <div className="chart-label">MACD</div>
-        <div className="chart-container" ref={equityContainerRef} />
+        <div className="chart-container macd-container" ref={macdContainerRef} />
         <div className="chart-label">資金曲線</div>
+        <div className="chart-container equity-container" ref={equityContainerRef} />
         {!loading && candles.length === 0 && !error && (
           <div className="empty-chart">
             <p>選擇日期範圍並點擊「取得資料」載入K線數據</p>

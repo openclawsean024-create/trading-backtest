@@ -523,6 +523,7 @@ body {
   border-radius: 10px;
   padding: 16px;
   margin-bottom: 12px;
+  position: relative;
 }
 
 .chart-title {
@@ -543,10 +544,23 @@ body {
 .chart-container {
   border-radius: 6px;
   overflow: hidden;
+  height: 400px;
+  contain: layout style;
+  background: var(--bg);
 }
 
 .rsi-chart {
   margin-top: 8px;
+}
+
+.rsi-container,
+.macd-container,
+.equity-container {
+  height: 150px;
+  contain: layout style;
+  background: var(--bg);
+  border-radius: 6px;
+  overflow: hidden;
 }
 
 .chart-label {
@@ -558,12 +572,18 @@ body {
 }
 
 .empty-chart {
-  height: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--text-muted);
   font-size: 0.85em;
+  pointer-events: none;
+  z-index: 1;
 }
 
 /* Tabs */
