@@ -278,6 +278,19 @@ body {
   text-align: center;
 }
 
+.stat-card-skeleton {
+  height: 80px;
+  background: linear-gradient(90deg, var(--surface) 0%, var(--surface2) 50%, var(--surface) 100%);
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.5s ease-in-out infinite;
+  border-color: var(--surface2);
+}
+
+@keyframes skeleton-shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
 .stat-label {
   font-size: 0.68em;
   color: var(--text-muted);

@@ -713,7 +713,7 @@ function App() {
         </div>
       )}
 
-      {result && (
+      {result ? (
         <div className="stats-row">
           <div className="stat-card">
             <div className="stat-label">總收益率</div>
@@ -747,6 +747,12 @@ function App() {
             <div className="stat-label">虧損交易</div>
             <div className="stat-value neg">{result.losingTrades}</div>
           </div>
+        </div>
+      ) : (
+        <div className="stats-row stats-row-skeleton" aria-hidden="true">
+          {[1, 2, 3, 4, 5, 6].map((i) => (
+            <div key={i} className="stat-card stat-card-skeleton" />
+          ))}
         </div>
       )}
 
@@ -798,6 +804,12 @@ function App() {
           💾 策略預設
         </button>
       </div>
+      ) : (
+        <div className="stats-row stats-row-skeleton" aria-hidden="true">
+          {[1, 2, 3, 4, 5, 6].map((i) => (
+            <div key={`pro-${i}`} className="stat-card stat-card-skeleton" />
+          ))}
+        </div>
       )}
 
       {showPresetModal && (
